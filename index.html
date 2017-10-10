@@ -12,7 +12,7 @@
     <!--CSS Link-->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+    <!--jQuery Link-->
     <script
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -20,20 +20,32 @@
     </script>
 </head>
 
-<body>
+	<!--Instructions/Pseudo steps
+		- Using bootstrap to create general layout/buttons/label.
+		- Start button to start the game/run timer.
+		- List questions True/False one answer per question.
+		- Create timer set timer between 30-120 seconds. 
+		- Correct/Incorrect, unanswered calculated results listed once the timer runs out or the player hits done with the game. 
+		- Attempting to use [arrays], loops to list out the questions/answers. 
 
+<body>
+	<!--Main bootstrap container to center my html game page layout-->
 	<div class="container text-center">
       <h1>Trivia Game</h1>
       <div class="jumbotron" id="content">
-
+		<!--This is going to be the main button to click and start the game/timer. Used Bootstrap-->
       	<button type="button" class="btn btn-primary id="start-button">Start</button>
-
+		
+		<!--Using bootstrap labels to display two choices True/False options. Quicker way with bootstraps format-->
+    	<label class="radio-inline"><input type="radio" name="q0" value="true">True</label>
+  		<label class="radio-inline"><input type="radio" name="q0" value="false">False</label>
+		
       </div>
 
      </div>
 
 
-
+<!--JavaScript-->
 <script type="text/javascript" src="assets/js/app.js"></script>
 
 </body>
