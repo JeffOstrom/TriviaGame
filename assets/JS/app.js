@@ -19,3 +19,25 @@ var questions = [
 		answer:
 	}
 ];
+
+//Creating my function to check the questions true/false with jQuery/loop
+
+function check(){
+		//Loop
+		for (var i = 0; i < questions.length; i++) {
+			//jQuery function/stackoverflow 
+			var answer = $("input[name=q" + i + "]:checked").val();
+
+			if (answer === undefined) {
+				misses++;
+			} //Using the loop to run through to confirm correct answer. 
+			else if(answer ===questions.length) {
+				correct++;
+			}else{
+				incorrect++;
+			}
+			
+		}
+
+
+}	
