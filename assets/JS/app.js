@@ -7,16 +7,16 @@ var misses = 0;
 // Variable using to create and array for the game questions 
 var questions = [
 	{   //List of specific questions to ask 
-		quest: "Chicago Blackhawks have won a total of 6 championships",
+		name: "Chicago Blackhawks have won a total of 6 championships",
 		answer: "true"
 	},
 	{
-		quest: "Patrick Kane is the team captain",
+		name: "Patrick Kane is the team captain",
 		answer: "false"
 	},
 	{
-		quest: "The home stadium for the Chicago Blackhawks is the United Center",
-		answer:
+		name: "The home stadium for the Chicago Blackhawks is the United Center",
+		answer: "true"
 	}
 ];
 
@@ -36,8 +36,50 @@ function check(){
 			}else{
 				incorrect++;
 			}
-			
+
 		}
+
+			//displaying results once finished selecting calling variables. 
+			//Using .append to display in order. 
+		$("#content").empty();
+		$("#content").append("<h1>Game is finished!</h1>");
+		$("#content").append("<h3>Correct: "+ correct + "</h3>");
+		$("#content").append("<h3>Incorrect:"+ incorrect + "</h3>");
+		$("#content").append("<h3>Misses:"+ misses + "</h3>");
 
 
 }	
+
+//Run the function/Timer section
+ //jQuery ready function
+ $(document).ready(function(){
+
+ 	$("#start-button").on("click", function(){
+
+ 		console.log("button");
+ 		//clear the content in the div .empty
+ 		$("#content").empty();
+ 		//Using .append to replace my h1 with the timer 
+ 		$("#content").append("<h1>Time: <span id='time'>30</></h1>");
+ 		
+ 		//I'm using an Interval timer since I want it to count down
+ 		var timer = setInterval(function(){
+			time--;
+			$("#time").html(time);
+
+			//condition to stop timer/ check questions
+			if(time < 1){
+				clearInterval(timer);
+				checkAnswer();
+			}	
+		}, 1000);
+ 		console.log("test timer")
+
+ 	});
+ 
+
+ }
+
+
+
+
