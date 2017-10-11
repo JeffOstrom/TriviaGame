@@ -1,5 +1,4 @@
 // Variables 
-//Make sure remove all console.log
 var time = 30;
 var correct = 0;
 var incorrect = 0;
