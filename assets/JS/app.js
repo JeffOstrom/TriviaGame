@@ -42,8 +42,7 @@ function checkAnswers(){
 			//displaying results once finished selecting calling variables. 
 			//Using .append to display in order. 
 		$("#content").empty();
-		$("#content").append("<h1>Game is finished!</h1>");
-
+		$("#content").append("<h1>Game Finished!</h1>");
 		$("#content").append("<h3>Correct: "+ correct + "</h3>");
 		$("#content").append("<h3>Incorrect:"+ incorrect + "</h3>");
 		$("#content").append("<h3>Misses:"+ misses + "</h3>");
@@ -61,7 +60,7 @@ function checkAnswers(){
  		//clear the content in the div .empty
  		$("#content").empty();
  		//Using .append to replace my h1 with the timer 
- 		$("#content").append("<h1>Time: <span id='time'>30</></h1>");
+ 		$("#content").append("<h1>Time Left: <span id='time'>30</></h1>");
  		
  		//I'm using an Interval timer since I want it to count down
  		var timer = setInterval(function(){
