@@ -2,7 +2,7 @@
 var time = 30;
 var correct = 0;
 var incorrect = 0;
-var unanswered = 0; 
+var misses = 0; 
 
 // Variable using to create and array for the game questions 
 var questions = [
@@ -29,7 +29,7 @@ function checkAnswers(){
 			var answer = $("input[name=q" + i + "]:checked").val();
 
 			if (answer === undefined){
-				unanswered++;
+				misses++;
 			} //Using the loop to run through to confirm correct answer. 
 			else if(answer === questions[i].answer) {
 				correct++;
@@ -42,10 +42,11 @@ function checkAnswers(){
 			//displaying results once finished selecting calling variables. 
 			//Using .append to display in order. 
 		$("#content").empty();
-		$("#content").append("<h1>Game Finished!</h1>");
+		$("#content").append("<h1>Game Over!</h1>");
+
 		$("#content").append("<h3>Correct: "+ correct + "</h3>");
 		$("#content").append("<h3>Incorrect:"+ incorrect + "</h3>");
-		$("#content").append("<h3>Unanswered:"+ unanswered + "</h3>");
+		$("#content").append("<h3>Misses:"+ misses + "</h3>");
 
 
 }	
@@ -56,11 +57,11 @@ function checkAnswers(){
 
  	$("#start-button").on("click", function(){
 
- 		
+ 		console.log("button clicked");
  		//clear the content in the div .empty
  		$("#content").empty();
  		//Using .append to replace my h1 with the timer 
- 		$("#content").append("<h1>Time Left: <span id='time'>30</></h1>");
+ 		$("#content").append("<h1>Time: <span id='time'>30</></h1>");
  		
  		//I'm using an Interval timer since I want it to count down
  		var timer = setInterval(function(){
@@ -73,9 +74,9 @@ function checkAnswers(){
 				checkAnswers();
 				//This function is going to clear and display my function with correct/incorrect answers 
 			}	
-		}, 1000);//controls the speed
+		}, 1000);
 
- 		// this loop displays each questions 
+ 		// this loop displays each questions
  		for (var i = 0; i < questions.length; i++) {
  		 $("#content").append("<p class='questions'>" + questions[i].name + "</p>");
  		 $("#content").append("<label class='radio-inline'><input type='radio' name=q" + i + " value='true'>True</label>");
